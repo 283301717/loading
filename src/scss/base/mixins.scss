@@ -1,0 +1,18 @@
+@mixin border($direction: null, $width: null, $style: null, $color: null) {
+	@if($direction == "top") {
+		border-top: $width $style $color;
+	} @else if($direction == "left") {
+		border-left: $width $style $color;
+	} @else if($direction == "right") {
+		border-right: $width $style $color;
+	} @else if($direction == "bottom") {
+		border-bottom: $width $style $color;
+	} @else {
+		border: $width $style $color;
+		/*
+	    border-width: $width;
+	    border-style: $style;
+	    border-color: $color;
+		 */
+	}
+}
