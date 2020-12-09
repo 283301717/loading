@@ -16,3 +16,9 @@
 		 */
 	}
 }
+
+@mixin radius($num: null) {
+    -webkit-border-radius: $num;
+    -moz-border-radius: $num;
+    border-radius: $num;
+}

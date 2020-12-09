@@ -66,17 +66,17 @@
   color:#fff;
 }
 .wxs-loading{
-  background:url(../../assets/ajax-loader.gif) no-repeat center 32px #000;
+  background:url(../assets/ajax-loader.gif) no-repeat center 32px #000;
   background-size:32px 32px;
   opacity:0.72;
 }
 .wxs-success{
-  background:url(../../assets/icon_success.png) no-repeat center 22px;
+  background:url(../assets/icon_success.png) no-repeat center 22px;
   background-size:50px;
   background-color:rgba(0,0,0,0.72);
 }
 .wxs-fail{
-  background:url(../../assets/icon_fail.png) no-repeat center 22px;
+  background:url(../assets/icon_fail.png) no-repeat center 22px;
   background-size:50px;
   background-color:rgba(0,0,0,0.72);
 }
@@ -135,7 +135,7 @@
       position:absolute;
       width:32px;
       height:32px!important;
-      background:url(../../assets/mobile_close.jpg) no-repeat center #fff;
+      background:url(../assets/mobile_close.jpg) no-repeat center #fff;
       background-size:45%;
       box-shadow: 0 0 3px #888888; 
       border-radius:50%;

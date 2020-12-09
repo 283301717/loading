@@ -4,8 +4,8 @@ import Vue from 'vue'
 import App from './App'
 require('./scss/global') // 这里用require如果用import那么就必须放在router下，因为import运行是调用，require是编译时调用
 import router from './router'
-//import wxs from '@/js/wxs'
-//Vue.use(wxs)
+import wxs from './js/wxs'
+Vue.use(wxs);
 
 Vue.config.productionTip = false
 
