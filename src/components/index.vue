@@ -4,7 +4,7 @@
   	  <div class="comBtn" @click="showLoading">显示 loading 提示框</div>
   	  <div class="comBtn" @click="showToast('success')">显示消息提示框 - success</div>
   	  <div class="comBtn" @click="showToast('fail')">显示消息提示框 - fail</div>
-  	  <div class="comBtn">显示消息提示框 - none</div>
+  	  <div class="comBtn" @click="showModal">显示消息提示框 - none</div>
   	  <div class="comBtn">显示模拟对话框</div>
   	  <div class="comBtn">显示模拟弹窗</div>
   	</div>
@@ -68,6 +68,16 @@ export default {
           })
         break;
       }
+    },
+    showModal: function() {
+      this.$wxs.showModal({
+      	title: "提示",
+      	content: "你充值的金额为￥200，是否继续？",
+      	showCancel: true,
+        cancelText: "取消",
+        confirmText: "确定",
+        success: function(res) { console.log()}
+      })
     }
   }
 }
