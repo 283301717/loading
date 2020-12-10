@@ -136,10 +136,11 @@
       width:32px;
       height:32px!important;
       background:url(../assets/mobile_close.jpg) no-repeat center #fff;
-      background-size:45%;
+      background-size: 12px;
       box-shadow: 0 0 3px #888888; 
       border-radius:50%;
-      right:-16px;top:-16px;
+      right:-16px;
+      top:-16px;
       cursor:pointer
     }
     .winContent{

@@ -46,6 +46,16 @@ const plugin = {
       document.body.appendChild(wxsPopup.$el);
   	}
     
+    //添加Vue全局属性，Vue.mixin
+    Vue.mixin({
+      data: function() {
+        return {
+          "a": 1
+        }
+      }
+    })
+    
+    //添加原型属性
     Vue.prototype.$wxs = {
       options: {
         status: false,  //true表示已有样式再可执行,

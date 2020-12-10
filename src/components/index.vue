@@ -13,34 +13,51 @@
 <style lang="scss">
 @import '@/scss/base/mixins';
 .wrap {
-	width: 100%;
-	height: 100%;
-	.wpBox {
-		width: 80%;
-		text-align: center;
-		.comBtn {
-			background: #DDDDDD;
-			@include radius(4px);
-			padding: 12px 0;
-			margin:20px auto;
-		}
-	}
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .wpBox {
+  	width: 80%;
+  	text-align: center;
+  	.comBtn {
+  	  background: #DDDDDD;
+  	  @include radius(4px);
+  	  padding: 12px 0;
+  	  margin:20px auto;
+  	}
+  	.hideLoading {
+  	  position: fixed;
+  	  bottom: 20px;
+  	  z-index: 1000;
+  	  width: 80%;
+  	}
+  }
 }
 #user {
-	width: 88vw;
-    max-width: 460px;
-    .login {
-    	width: 90%;
-    	padding: 15px 0;
-    	div {
-    		margin:15px 0px;
-    	}
-    	input, button {
-    		@include border(null, 1px, solid, #eee);
-    		padding: 12px;
-    		width: 80%;
-    	}
-    }
+  width: 82vw;
+  max-width: 360px;
+  .login {
+  	width: 100%;
+  	padding: 12px 0 10px;
+  	div {
+  	  margin:20px 0px;
+  	}
+  	input, button {
+  	  @include border(null, 1px, solid, #eee);
+  	  padding: 12px;
+  	  width: 84%;
+  	  font-size: 14px;
+  	  @include box-sizing(border-box);
+  	}
+  	button { 
+  	  background: #1BAD1A;
+  	  color: #fff;
+  	  font-size: 16px;
+  	  &:active {
+  	  	background: #189E18;
+  	  };
+  	}
+  }
 }
 </style>
 <script>
@@ -50,10 +67,15 @@ export default {
       this.$wxs.showLoading({
         title: "加载中"
       })
+      setTimeout(this.hideLoading, 2000)
+    },
+    hideLoading: function() {
+      this.$wxs.hideLoading();
     },
     showToast: function($type) {
       switch($type) {
         case "success":
+          console.log(this.a)
           this.$wxs.showToast({
           	title: "加载成功",
           	icon: "success",
