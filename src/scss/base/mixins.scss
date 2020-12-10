@@ -22,3 +22,10 @@
     -moz-border-radius: $num;
     border-radius: $num;
 }
+
+@mixin box-sizing($box: null) {
+  box-sizing: $box;
+  -moz-box-sizing: $box;
+  -o-box-sizing: $box; 
+  -webkit-box-sizing: $box;
+}

@@ -4,9 +4,9 @@
   	  <div class="comBtn" @click="showLoading">显示 loading 提示框</div>
   	  <div class="comBtn" @click="showToast('success')">显示消息提示框 - success</div>
   	  <div class="comBtn" @click="showToast('fail')">显示消息提示框 - fail</div>
-  	  <div class="comBtn" @click="showModal">显示消息提示框 - none</div>
-  	  <div class="comBtn">显示模拟对话框</div>
-  	  <div class="comBtn">显示模拟弹窗</div>
+  	  <div class="comBtn" @click="showToast('none')">显示消息提示框 - none</div>
+  	  <div class="comBtn" @click="showModal">显示模拟对话框</div>
+  	  <div class="comBtn" @click="showWindow">显示模拟弹窗</div>
   	</div>
   </div>
 </template>
@@ -25,6 +25,22 @@
 			margin:20px auto;
 		}
 	}
+}
+#user {
+	width: 88vw;
+    max-width: 460px;
+    .login {
+    	width: 90%;
+    	padding: 15px 0;
+    	div {
+    		margin:15px 0px;
+    	}
+    	input, button {
+    		@include border(null, 1px, solid, #eee);
+    		padding: 12px;
+    		width: 80%;
+    	}
+    }
 }
 </style>
 <script>
@@ -76,7 +92,15 @@ export default {
       	showCancel: true,
         cancelText: "取消",
         confirmText: "确定",
-        success: function(res) { console.log()}
+        success: function(res) { console.log(res) },
+        fail: function(res) { console.log("fail") },
+        complete: function(res) { console.log("complete") }
+      })
+    },
+    showWindow: function() {
+      this.$wxs.showWindow({
+      	showClose: true,
+      	innerHtml: '<div id="user"><div class="login"><div class="username"><input type="text" name="username" placeholder="用户名" v-model="username"></div><div class="password"><input type="password" name="password" placeholder="密码" v-modle="password"></div><div class="sbtn"><button type="submit" name="sbtn">登录</button></div></div></div>'
       })
     }
   }

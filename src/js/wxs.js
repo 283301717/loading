@@ -5,7 +5,7 @@
 
 import wxsComponent from '@/components/wxs' //引入组件
 
-const baseWxs = {
+const plugin = {
   install: function(Vue, options) {
 
     //Vue.extend 属于 Vue 的全局 API 他是Vue构造函数的一个基础构造器（或者数是简约版的Vue构造函数）
@@ -58,6 +58,8 @@ const baseWxs = {
           //初始化
       	  initmyComponent() 
           
+          //wxsPopup.$off('status') //$off 先移除status 的监听
+
           //通过$on来接收子组件的传值
           wxsPopup.$on("status", function(data) {
         	  self.options.status = data //更新是否已有样式在运行状态
@@ -144,4 +146,4 @@ const baseWxs = {
   }
 }
 
-export default baseWxs
+export default plugin
